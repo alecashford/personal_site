@@ -1,0 +1,15 @@
+from .base import *
+
+DEBUG = False
+ALLOWED_HOSTS = ["www.alecashford.com"]
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("PROD_DB_NAME"),
+        "USER": os.environ.get("APP_DB_USERNAME"),
+        "PASSWORD": os.environ.get("APP_DB_PASSWORD"),
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": os.environ.get("DB_PORT"),
+    }
+}
