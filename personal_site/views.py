@@ -7,6 +7,9 @@ from django.views import generic
 #     return HttpResponse("Hello there")
 
 
-class Homepage(generic.View):
+class Home(generic.TemplateView):
+
+    template_name = "personal_site/home.html"
+
     def get_queryset(self):
         pass
