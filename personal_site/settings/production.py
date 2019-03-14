@@ -1,7 +1,7 @@
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS = ["www.alecashford.com"]
+ALLOWED_HOSTS = ["www.alecashford.com", "ashford.sh"]
 
 DATABASES = {
     "default": {
@@ -13,3 +13,5 @@ DATABASES = {
         "PORT": os.environ.get("DB_PORT"),
     }
 }
+
+HEAP_ENV_ID = "1936440746"
