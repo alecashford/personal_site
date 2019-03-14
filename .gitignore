@@ -1,3 +1,4 @@
 /secrets.sh
 /.vscode/
 .DS_Store
+*.pyc
