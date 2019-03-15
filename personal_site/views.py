@@ -13,3 +13,15 @@ class Home(generic.TemplateView):
 
     def get_queryset(self):
         pass
+
+
+class Projects(generic.TemplateView):
+    pass
+
+
+class Resume(generic.TemplateView):
+    pass
+
+
+class About(generic.TemplateView):
+    pass

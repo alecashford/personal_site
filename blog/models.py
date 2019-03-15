@@ -2,15 +2,15 @@ from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
-from wagtail.core.models import Page, Orderable
+from wagtail.core.models import Page as WagtailPage
+from wagtail.images.models import Image
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 
-class BlogIndexPage(Page):
-    intro = RichTextField(blank=True)
+class BlogIndexPage(WagtailPage):
 
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse chronology
@@ -27,39 +27,30 @@ class BlogPageTag(TaggedItemBase):
         on_delete=models.CASCADE
     )
 
+print("hello there " + str(Image))
 
-class BlogPage(Page):
+class BlogPage(WagtailPage):
     date = models.DateField("Post date")
-    intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
+    display_image = models.OneToOneField(
+        Image,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
 
-    content_panels = Page.content_panels + [
+    content_panels = WagtailPage.content_panels + [
         MultiFieldPanel([
+            ImageChooserPanel('display_image'),
             FieldPanel('date'),
             FieldPanel('tags'),
         ], heading="Blog information"),
-        FieldPanel('intro'),
         FieldPanel('body'),
-        InlinePanel('gallery_images', label="Gallery images"),
     ]
 
 
-class BlogPageGalleryImage(Orderable):
-    page = ParentalKey(BlogPage, on_delete=models.CASCADE,
-                       related_name='gallery_images')
-    image = models.ForeignKey(
-        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
-    )
-    caption = models.CharField(blank=True, max_length=250)
-
-    panels = [
-        ImageChooserPanel('image'),
-        FieldPanel('caption'),
-    ]
-
-
-class BlogTagIndexPage(Page):
+class BlogTagIndexPage(WagtailPage):
 
     def get_context(self, request):
 
@@ -71,3 +62,10 @@ class BlogTagIndexPage(Page):
         context = super().get_context(request)
         context['blogpages'] = blogpages
         return context
+
+
+# class DisplayImage(Image):
+#     post = models.OneToOneField(
+#         'BlogPage',
+#         on_delete=models.CASCADE,
+#     )

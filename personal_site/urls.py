@@ -28,8 +28,15 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('admin/', admin.site.urls),
+
+    # Wagtail URLs
+    re_path(r'^blog/', include(wagtail_urls), name='blog_index'),
     re_path(r'^cms/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),
     re_path(r'^pages/', include(wagtail_urls)),
-    re_path(r'^blog/', include(wagtail_urls)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+# Needed to serve static images in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
