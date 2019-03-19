@@ -24,4 +24,5 @@ class Resume(generic.TemplateView):
 
 
 class About(generic.TemplateView):
-    pass
+    
+    template_name = "personal_site/about.html"

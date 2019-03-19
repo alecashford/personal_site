@@ -12,8 +12,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link href="//cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" /> -->
-        <!-- <script src="//cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script> -->
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
 
@@ -30,19 +28,17 @@
         <!-- <div id="sidegrip">
             <div class="arrow"></div>
         </div> -->
-        <div id="sidedrawer" class="mui--no-user-select">
-            <!-- Side drawer content goes here -->
-            <!-- <div id="sidedrawer-brand" class="mui--appbar-line-height">
-                <span class="mui--text-title">Alec</span>
-            </div> -->
+        <div id="sidedrawer">
             <div id="sidedrawer-contents">
-                <div id="picture">
-                    <img src="{{MEDIA_URL}}images/logo.png">
-                </div>
-                <div id="name">
-                    Alec Ashford
-                </div>
-                <div class="mui-divider"></div>
+                <a href="{% url 'home' %}">
+                    <div id="picture">
+                        <img src="{{MEDIA_URL}}images/logo.png">
+                    </div>
+                    <div id="name">
+                        Alec Ashford
+                    </div>
+                </a>
+                <div></div>
                 <ul>
                     <li>
                         <a href="/blog/"><strong>Blog</strong></a>
@@ -56,11 +52,7 @@
                         </ul>
                     </li>
                     <li>
-                        <!-- Change this to a dynamic link -->
-                        <a href="/resume/"><strong>Resume</strong></a>
-                    </li>
-                    <li>
-                        <strong>About</strong>
+                        <a href="{% url 'about' %}"><strong>About</strong></a>
                     </li>
                     <li>
                         <strong>Contact</strong>
@@ -68,9 +60,10 @@
                 </ul>
             </div>
             <ul class="social-icons">
-                <li><a href="http://www.facebook.com"><img src='path_to_your_image' /></a></li>
-                <li><a href="http://www.twitter.com"><img src='path_to_your_image' /></a></li>
-                <li><a href="http://www.youtube.com"><img src='path_to_your_image' /></a></li>
+                <li><a href="https://github.com/alecashford"><img src='{{MEDIA_URL}}images/github_logo.png' /></a></li>
+                <li><a href="mailto:alecwashford@gmail.com"><img src='{{MEDIA_URL}}images/gmail_logo.png' /></a></li>
+                <li><a href="https://twitter.com/thrashford"><img src='{{MEDIA_URL}}images/twitter_logo.png' /></a></li>
+                <li><a href="https://www.linkedin.com/in/awashford/"><img src='{{MEDIA_URL}}images/linkedin_logo.png' /></a></li>
             </ul>
         </div>
         <div id="content-wrapper">

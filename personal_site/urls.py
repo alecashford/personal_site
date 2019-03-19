@@ -27,6 +27,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
+    path('about', views.About.as_view(), name='about'),
     path('admin/', admin.site.urls),
 
     # Wagtail URLs

@@ -19,6 +19,7 @@ h1 {
     overflow: auto;
     cursor: pointer;
     position: relative;
+    max-width: 75%;
 }
 
 .blog-post:hover {
