@@ -1,0 +1,53 @@
+/* Normalize links so that the whole <a> tag is not styled */
+a:-webkit-any-link {
+    color: black;
+    cursor: default;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.display-image {
+    float: right;
+    margin-left: 15px;
+}
+
+.blog-post {
+    padding: 20px;
+    overflow: auto;
+    cursor: pointer;
+    position: relative;
+}
+
+.blog-post:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.blog-post h2 {
+    font-size: 35px;
+}
+
+.blog-intro {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.blog-text {
+    text-align: left;
+    word-wrap: break-word;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.details {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: rgb(119, 119, 119); 
+}
+
+/* h2 {
+    float:right;
+} */

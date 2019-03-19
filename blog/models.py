@@ -9,6 +9,7 @@ from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
+import math
 
 class BlogIndexPage(WagtailPage):
 
@@ -32,6 +33,7 @@ print("hello there " + str(Image))
 class BlogPage(WagtailPage):
     date = models.DateField("Post date")
     body = RichTextField(blank=True)
+    intro = models.CharField(max_length=250, blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     display_image = models.OneToOneField(
         Image,
@@ -43,11 +45,20 @@ class BlogPage(WagtailPage):
     content_panels = WagtailPage.content_panels + [
         MultiFieldPanel([
             ImageChooserPanel('display_image'),
+            FieldPanel('intro'),
             FieldPanel('date'),
             FieldPanel('tags'),
         ], heading="Blog information"),
         FieldPanel('body'),
     ]
+
+    def word_count(self):
+        count = len(self.body.split())
+        return count
+
+    def min_to_read(self):
+        avg_wpm = 225
+        return math.ceil(self.word_count() / avg_wpm)
 
 
 class BlogTagIndexPage(WagtailPage):

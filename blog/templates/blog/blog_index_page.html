@@ -1,15 +1,34 @@
 {% extends "personal_site/base.html" %}
 
+{% load staticfiles%}
+
 {% load wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-blogindexpage{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'personal_site/css/blog/index.css' %}">
+{% endblock css %}
 
 {% block content %}
 <h1>{{ page.title }}</h1>
 
 {% for post in blogpages %}
     {% with post=post.specific %}
-        {% image post.display_image fill-200x200 %}<h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+    <a href="{% pageurl post %}">
+        <div class="blog-post">
+            <div class="display-image">{% image post.display_image fill-150x150 %}</div>
+            <div class="blog-text">
+                <h2>{{ post.title }}</h2>
+                <div class="blog-intro">{{ post.intro }}</div>
+                <div class="details">
+                    {{ post.date }}
+                    •
+                    {{ post.min_to_read }} minute read
+                </div>
+            </div>
+        </div>
+    </a>
     {% endwith %}
 {% endfor %}
 

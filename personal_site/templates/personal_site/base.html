@@ -12,66 +12,69 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="//cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" />
-        <script src="//cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
+        <!-- <link href="//cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" /> -->
+        <!-- <script src="//cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script> -->
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
 
+        <link rel="stylesheet" type="text/css" href="{% static 'personal_site/css/normalize.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'personal_site/css/base.css' %}">
         <script type="text/javascript" src="{% static 'personal_site/js/base.js' %}"></script>
+
+        {% block css %}
+        {% endblock css %}
 
     </head>
 
     <body>
+        <!-- <div id="sidegrip">
+            <div class="arrow"></div>
+        </div> -->
         <div id="sidedrawer" class="mui--no-user-select">
             <!-- Side drawer content goes here -->
-            <div id="sidedrawer-brand" class="mui--appbar-line-height">
-                <span class="mui--text-title">Brand.io</span>
+            <!-- <div id="sidedrawer-brand" class="mui--appbar-line-height">
+                <span class="mui--text-title">Alec</span>
+            </div> -->
+            <div id="sidedrawer-contents">
+                <div id="picture">
+                    <img src="{{MEDIA_URL}}images/logo.png">
+                </div>
+                <div id="name">
+                    Alec Ashford
+                </div>
+                <div class="mui-divider"></div>
+                <ul>
+                    <li>
+                        <a href="/blog/"><strong>Blog</strong></a>
+                    </li>
+                    <li>
+                        <strong>Projects</strong>
+                        <ul>
+                            <li><a href="#">Item 1</a></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <!-- Change this to a dynamic link -->
+                        <a href="/resume/"><strong>Resume</strong></a>
+                    </li>
+                    <li>
+                        <strong>About</strong>
+                    </li>
+                    <li>
+                        <strong>Contact</strong>
+                    </li>
+                </ul>
             </div>
-            <div class="mui-divider"></div>
-            <ul>
-                <li>
-                    <strong><a href="/blog/"">Blog</a></strong>
-                </li>
-                <li>
-                    <strong>Projects</strong>
-                    <ul>
-                        <li><a href="#">Item 1</a></li>
-                        <li><a href="#">Item 2</a></li>
-                        <li><a href="#">Item 3</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Resume</strong>
-                    <ul>
-                        <li><a href="#">Item 1</a></li>
-                        <li><a href="#">Item 2</a></li>
-                        <li><a href="#">Item 3</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>About</strong>
-                    <ul>
-                        <li><a href="#">Item 1</a></li>
-                        <li><a href="#">Item 2</a></li>
-                        <li><a href="#">Item 3</a></li>
-                    </ul>
-                </li>
+            <ul class="social-icons">
+                <li><a href="http://www.facebook.com"><img src='path_to_your_image' /></a></li>
+                <li><a href="http://www.twitter.com"><img src='path_to_your_image' /></a></li>
+                <li><a href="http://www.youtube.com"><img src='path_to_your_image' /></a></li>
             </ul>
         </div>
-        <header id="header">
-            <div class="mui-appbar mui--appbar-line-height">
-                <div class="mui-container-fluid">
-                    <a
-                        class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
-                    <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
-                    <span class="mui--text-title mui--visible-xs-inline-block">Alec Ashford</span>
-                </div>
-            </div>
-        </header>
         <div id="content-wrapper">
             <!-- Main content goes here -->
-            <div class="mui--appbar-height"></div>
-            <div class="mui-container-fluid">
                 {% block content %}
                 {% endblock %}
             </div>
