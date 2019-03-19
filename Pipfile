@@ -9,6 +9,7 @@ autopep8 = "*"
 [packages]
 django = "*"
 wagtail = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"

@@ -28,8 +28,6 @@ class BlogPageTag(TaggedItemBase):
         on_delete=models.CASCADE
     )
 
-print("hello there " + str(Image))
-
 class BlogPage(WagtailPage):
     date = models.DateField("Post date")
     body = RichTextField(blank=True)
