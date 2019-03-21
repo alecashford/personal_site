@@ -1,5 +1,3 @@
-import os
-
 DEBUG = False
 ALLOWED_HOSTS = ["www.alecashford.com", "ashford.sh"]
 
