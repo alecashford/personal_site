@@ -26,7 +26,6 @@ if DEPLOYMENT_ENVIRONMENT == "production":
     from .production import *
 else:
     from .development import *
-    print(DEPLOYMENT_ENVIRONMENT)
 
 ALLOWED_HOSTS = []
 
