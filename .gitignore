@@ -1,4 +1,5 @@
-/secrets.sh
-/.vscode/
+secrets.sh
+.vscode
 .DS_Store
 *.pyc
+secrets

@@ -18,16 +18,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CONSTANTS
 SECRET_KEY = os.environ.get("SECRET_KEY")
 DEPLOYMENT_ENVIRONMENT = os.environ.get("DEPLOYMENT_ENVIRONMENT") or "development"
-
 # Be sure to set environment variable "DEPLOYMENT_ENVIRONMENT" to "production"
 # in the production server OS
+
+ALLOWED_HOSTS = []
 
 if DEPLOYMENT_ENVIRONMENT == "production":
     from .production import *
 else:
     from .development import *
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
