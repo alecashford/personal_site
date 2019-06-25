@@ -1,8 +1,14 @@
 {% extends "personal_site/base.html" %}
 
+{% load static %}
+
 {% load wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-blogpage{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'personal_site/css/blog/blog_page.css' %}">
+{% endblock css %}
 
 {% block content %}
 <h1>{{ page.title }}</h1>

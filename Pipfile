@@ -10,6 +10,7 @@ autopep8 = "*"
 django = "*"
 wagtail = "*"
 psycopg2 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

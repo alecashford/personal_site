@@ -1,0 +1,45 @@
+/* #content-wrapper {
+  min-height: 100%;
+  overflow-x: hidden;
+  transition: margin-left 0.2s;
+  background: -webkit-linear-gradient(70deg, #82D661  30%, rgba(0,0,0,0) 30%), -webkit-linear-gradient(30deg, #8EEC6A 60%, #B2F39A 60%);
+  background: -o-linear-gradient(70deg, #82D661  30%, rgba(0,0,0,0) 30%), -o-linear-gradient(30deg, #8EEC6A 60%, #B2F39A 60%);
+  background: -moz-linear-gradient(70deg, #82D661  30%, rgba(0,0,0,0) 30%), -moz-linear-gradient(30deg, #8EEC6A 60%, #B2F39A 60%);
+  background: linear-gradient(70deg, #82D661  30%, rgba(0,0,0,0) 30%), linear-gradient(40deg, #8EEC6A 62%, #B2F39A 60%);
+} */
+
+#content-wrapper {
+    min-height: 100%;
+    overflow-x: hidden;
+    transition: margin-left 0.2s;
+    /* padding: 0%; */
+    background: -webkit-linear-gradient(70deg, rgb(51, 51, 51) 30%, rgba(0, 0, 0, 0) 30%), -webkit-linear-gradient(30deg, rgb(114, 114, 114) 60%, rgb(170, 170, 170) 60%);
+    background: -o-linear-gradient(70deg, rgb(51, 51, 51) 30%, rgba(0, 0, 0, 0) 30%), -o-linear-gradient(30deg, rgb(114, 114, 114) 60%, rgb(170, 170, 170) 60%);
+    background: -moz-linear-gradient(70deg, rgb(51, 51, 51) 30%, rgba(0, 0, 0, 0) 30%), -moz-linear-gradient(30deg, rgb(114, 114, 114) 60%, rgb(170, 170, 170) 60%);
+    background: linear-gradient(70deg, rgb(51, 51, 51) 30%, rgba(0, 0, 0, 0) 30%), linear-gradient(50deg, rgb(114, 114, 114) 60%, rgb(165, 162, 162) 60%);
+}
+
+#welcome {
+    font-size: 10em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 400px;
+    /* background: -webkit-linear-gradient(70deg, rgb(51, 51, 51) 30%, rgba(0, 0, 0, 0) 30%), -webkit-linear-gradient(30deg, #82D661 60%, #8EEC6A 60%);
+    background: -o-linear-gradient(70deg, rgb(51, 51, 51) 30%, rgba(0, 0, 0, 0) 30%), -o-linear-gradient(30deg, #82D661 60%, #8EEC6A 60%);
+    background: -moz-linear-gradient(70deg, rgb(51, 51, 51) 30%, rgba(0, 0, 0, 0) 30%), -moz-linear-gradient(30deg, #82D661 60%, #8EEC6A 60%); */
+    /* background: linear-gradient(69deg, rgb(51, 51, 51) 42%, rgba(0, 0, 0, 0) 30%), linear-gradient(50deg, #8EEC6A 60%, #82D661 44%); */
+    background: linear-gradient(69deg, #dcffcf 37%, rgba(0, 0, 0, 0) 30%), linear-gradient(50deg, #b1fe92 58%, #80d561 44%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#subtitle {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#footer {
+    background-color: #232323;
+}

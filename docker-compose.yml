@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  django_app:
+    build: .
+    volumes:
+      - .:/home/appuser/personal_site
+
+  nginx:
+    image: nginx:1.15-alpine
+    ports:
+      - 8000:80
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:  # <-- wait for django_app to be "ready" before starting this service
+      - django_app

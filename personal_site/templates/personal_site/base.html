@@ -41,28 +41,26 @@
                 <div></div>
                 <ul>
                     <li>
-                        <a href="/blog/"><strong>Blog</strong></a>
+                        <a href="{% url 'about' %}"><strong>About Me</strong></a>
                     </li>
                     <li>
                         <strong>Projects</strong>
                         <ul>
-                            <li><a href="#">Item 1</a></li>
-                            <li><a href="#">Item 2</a></li>
-                            <li><a href="#">Item 3</a></li>
+                            <li><a href="https://tictactoe.ashford.sh/">Tic Tac Toe</a></li>
+                            <li><a href="#">House Keeper</a></li>
+                            <li><a href="https://chrome.google.com/webstore/detail/new-tab-flag/lagcgenebmlhjhclaoakigmljeipmamg?hl=en">New Tab? Flag!</a></li>
+                            <li><a href="#">This Site + Infra</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'about' %}"><strong>About</strong></a>
-                    </li>
-                    <li>
-                        <strong>Contact</strong>
+                        <a href="/blog/"><strong>Blog</strong></a>
                     </li>
                 </ul>
             </div>
             <ul class="social-icons">
                 <li><a href="https://github.com/alecashford"><img src='{{MEDIA_URL}}images/github_logo.png' /></a></li>
                 <li><a href="mailto:alecwashford@gmail.com"><img src='{{MEDIA_URL}}images/gmail_logo.png' /></a></li>
-                <li><a href="https://twitter.com/thrashford"><img src='{{MEDIA_URL}}images/twitter_logo.png' /></a></li>
+                <!-- <li><a href="#"><img src='{{MEDIA_URL}}images/twitter_logo.png' /></a></li> -->
                 <li><a href="https://www.linkedin.com/in/awashford/"><img src='{{MEDIA_URL}}images/linkedin_logo.png' /></a></li>
             </ul>
         </div>
@@ -73,6 +71,7 @@
             </div>
         </div>
         <footer id="footer">
+            © Alec Ashford {% now "Y" %}
         </footer>
     </body>
 </html>

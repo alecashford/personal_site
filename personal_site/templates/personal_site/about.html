@@ -7,6 +7,26 @@
 {% endblock css %}
 
 {% block content %}
-About page!
+<div id="image-container">
+    <div id="greeting">Hi</div>
+    <img id="about-me-main-pic" src="{{MEDIA_URL}}images/pyramid.jpg">
+</div>
+<div id="text-wrapper">
+<h2>A Bit About Me</h2>
+<p>I'm an engineer with over five years of experinece in the software industry. For my next step I am seeking a back-end or back-end focused full-stack position, with particular interest focused on DevOps, infrastructure, and platform engineering!</p>
+
+<p>I was one of the first generations of web dev bootcamp graduates, in 2014. Afterward, I went to work at Energy Solutions as a technical PM and client consultant. While there, I designed the system that reliably calculated efficiency intentives for my programs. In addition to the design, I replaced our manual testing protocal system with one that provided complete coverage for all supported intentives.</p>
+
+<p>Next I worked at Heap, a product and user behavioral analytics company in San Francisco. While there, I worked on our solutions team as an engineering resource and owner of the technical side of the customer experience. I wrote custom implementations of our product for new customers (mostly client-side tracking code in JavaScript), managed the creation of new Redshift instances and initiation of ETL for customers of our data-out service, Heap Connect, and automated common manual processes by building out our internal tools repo. I also admined our Salesforce instance.</p>
+
+<h2>Technologies</h2>
+
+<p>I have experience in many client and server-side technologies, including:</p>
+<ul>
+    <li>Languages: Python, JavaScript, Ruby, Bash, SQL, HTML/CSS</li>
+    <li>Web Frameworks: Django, Rails, Sinatra, AngularJS, jQuery, Wagtail</li>
+    <li>Infrastructure: Linux, Unix CLI, Git, Docker, AWS (EC2, S3, Redshift), Ansible, Terraform, Traefik, Nginx, Postgres, Citus</li>
+    <li>Design Patterns: OOP, MVC, TDD</li>
+</ul>
 
 {% endblock content %}
