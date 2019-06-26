@@ -15,7 +15,7 @@ services:
   nginx:
     image: nginx:1.15-alpine
     ports:
-      - 8000:80
+      - 8000:8000
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - static_volume:/home/appuser/personal_site/personal_site/static  # <-- bind the static volume
