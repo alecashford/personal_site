@@ -24,9 +24,7 @@ USER appuser
 
 RUN pipenv sync
 
-EXPOSE 8000/tcp
+EXPOSE 80/tcp
 
 # set environment varibles
-# ENTRYPOINT [ "/home/appuser/personal_site/entrypoint.sh" ]
 ENTRYPOINT ["sh", "/home/appuser/personal_site/entrypoint.sh"]
-# CMD [ "python", "manage.py", "runserver"]
